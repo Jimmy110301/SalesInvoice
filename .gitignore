@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/SalesInvoice.Data/bin/Debug/net9.0
+/SalesInvoice.Data/obj
+/SalesInvoice.Models/bin/Debug/net9.0
+/SalesInvoice.Models/obj
+/SalesInvoice.Repository/bin/Debug/net9.0
+/SalesInvoice.Repository/obj
+/SalesInvoice.Service/bin/Debug/net9.0
+/SalesInvoice.Service/obj
+/SalesInvoice.ViewModels/bin/Debug/net9.0
+/SalesInvoice.ViewModels/obj
+/SalesInvoice.WebAPI/bin/Debug/net9.0
+/SalesInvoice.WebAPI/obj
+/SalesInvoice.WebAPI/.vs
