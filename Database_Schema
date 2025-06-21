@@ -1,0 +1,43 @@
+
+
+CREATE TABLE Category
+(
+	[Id] UNIQUEIDENTIFIER PRIMARY KEY DEFAULT(newid()),
+	CategoryName NVARCHAR(200) NOT NULL,
+	IsActive BIT Default(1)
+)
+
+CREATE TABLE Items
+	(
+		[Id] UNIQUEIDENTIFIER PRIMARY KEY DEFAULT(newid()),
+		ItemCode NVARCHAR(500) NOT NULL,
+		ItemName NVARCHAR(500) NOT NULL,
+		CategoryId  UNIQUEIDENTIFIER REFERENCES Category(Id) NOT NULL,
+		ItemUPrice Decimal NOT NULL,
+		ItemDiscountInPer DECIMAL NULL ,
+		IsActive BIT Default(1)
+	)
+
+CREATE TABLE Invoice
+(
+		[Id] UNIQUEIDENTIFIER PRIMARY KEY DEFAULT(newid()),
+		InvoiceNo NVARCHAR(100) NOT NULL,
+		InvoiceDateTime DATETIME NOT NULL,
+		InvoiceCustomerName Nvarchar(500) NOT NULL,
+		InvoiceCustomerNo NVARCHAR(100) NOT NULL,
+		InvoicePaymentMode INT NOT NULL,
+		AmountPaid DECIMAL NOT NuLL,
+		IsActive BIT DEFAULT(1)
+)
+
+CREATE TABLE InvoiceItems
+(
+		[Id] UNIQUEIDENTIFIER PRIMARY KEY DEFAULT(newid()),
+		InvoiceId UNIQUEIDENTIFIER REFerences Invoice(Id) NOT NULL,
+		ItemId UNIQUEIDENTIFIER REferences Items(Id) NOT NULL,
+		ItemQty INT NOT NULL,
+		ItemUnitPrice DECIMAL NOT NULL,
+		ItemDiscount DECIMAL NOT NULL,
+		ItemAmount DECIMAL NOT NULL,
+)
+
